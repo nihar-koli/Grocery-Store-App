@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SaveVegetable">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/Cart"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="300dp"
+                android:layout_marginTop="12dp"
+                android:scaleType="fitCenter"
+                android:onClick="gotoCart"
+                app:srcCompat="@drawable/s_cart" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                app:srcCompat="@mipmap/veg1_foreground"
+                tools:layout_editor_absoluteX="30dp"
+                tools:layout_editor_absoluteY="43dp" />
+
+            <TextView
+                android:id="@+id/totalTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="139dp"
+                android:text="Cauliflower"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteX="175dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="175dp"
+                android:text="Rs.12"
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="175dp"
+                tools:layout_editor_absoluteY="131dp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="90dp"
+                android:text="1 pc-approx 400 to 600 gm"
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="175dp"
+                tools:layout_editor_absoluteY="93dp" />
+
+            <Button
+                android:id="@+id/Cauliflower"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="165dp"
+                android:onClick="AddVegetableToCart"
+                android:text="Add"
+                tools:layout_editor_absoluteX="328dp"
+                tools:layout_editor_absoluteY="123dp" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                app:srcCompat="@drawable/brinjal" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="170dp"
+                android:text="Brinjal"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="86dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="165dp"
+                android:text="Rs.68/kg"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/Brinjal"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="170dp"
+                android:onClick="AddVegetableToCart"
+                android:text="ADD" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                app:srcCompat="@drawable/cabbage" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="106dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="155dp"
+                android:text="Cabbage"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_marginLeft="175dp"
+                android:text="Rs.29"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"
+                android:layout_marginLeft="100dp"
+                android:text="1 pc-approx 500 to 800gm"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/Cabbage"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="170dp"
+                android:onClick="AddVegetableToCart"
+                android:text="ADD" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="match_parent"
+                android:layout_height="129dp"
+                app:srcCompat="@drawable/tomato" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="160dp"
+                android:text="Tomato"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="31dp"
+                android:layout_marginLeft="165dp"
+                android:text="Rs.36/kg"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/Tomato"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="170dp"
+                android:onClick="AddVegetableToCart"
+                android:text="ADD" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="match_parent"
+                android:layout_height="129dp"
+                app:srcCompat="@drawable/onion" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="165dp"
+                android:text="Onion"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="160dp"
+                android:text="Rs.62/kg"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/Onion"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="165dp"
+                android:onClick="AddVegetableToCart"
+                android:text="ADD" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

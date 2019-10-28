@@ -12,7 +12,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    DatabaseHelper myDB;
+    TextView loginUsername;
+    TextView loginPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,19 +27,33 @@ public class MainActivity extends AppCompatActivity {
 
         DatabaseHelper myDb = new DatabaseHelper(this);
 
-        TextView LoginUsername = findViewById(R.id.LoginUsername);
-        TextView LoginPassword = findViewById(R.id.LoginPassword);
+        loginUsername = findViewById(R.id.LoginUsername);
+        loginPassword = findViewById(R.id.LoginPassword);
 
-        if(myDb.isUserRegistered(LoginUsername.getText().toString(),LoginPassword.getText().toString())){
-            Session.endsession(this);
-            Session.setuser(this,LoginUsername.getText().toString(),LoginPassword.getText().toString());
-            gotoSelection(view);
+        if(loginUsername.getText().toString().equals("") || loginPassword.getText().toString().equals("")){
+            AlertDialog.Builder builder=new AlertDialog.Builder(this);
+            builder.setCancelable(true);
+            builder.setTitle("Error!");
+            builder.setMessage("Please fill all details...");
+            builder.show();
+            reset();
+        }else {
+            if (myDb.isUserRegistered(loginUsername.getText().toString(), loginPassword.getText().toString())) {
+                Session.endsession(this);
+                Session.setuser(this, loginUsername.getText().toString(), loginPassword.getText().toString());
+                reset();
+                gotoSelection(view);
 
+            } else {
+                showMessage("Invalid Credentials", "Please try again!");
+                reset();
+            }
         }
-        else{
-            showMessage("Invalid Credentials","Please try again!");
-        }
+    }
 
+    public void reset(){
+        loginUsername.setText("");
+        loginPassword.setText("");
     }
 
     public void gotoSelection(View view){

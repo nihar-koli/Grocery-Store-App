@@ -16,25 +16,40 @@ import android.widget.TextView;
 public class FinalCart extends AppCompatActivity {
 
     DatabaseHelper mydb;
+    boolean empty = false;
 
     public void confirm(View view){
         SQLiteDatabase db = mydb.getReadableDatabase();
         db.execSQL("DELETE FROM " + DatabaseHelper.TABLE_NAME2);
         db.close();
 
-        new AlertDialog.Builder(FinalCart.this)
-                .setTitle("Thank You!")
-                .setMessage("Your order placed successfully!!!")
-                .setNeutralButton("Ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(FinalCart.this,Selection.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(intent);
-                    }
-                })
-                .show();
-
+        if(empty == true){
+            new AlertDialog.Builder(FinalCart.this)
+                    .setTitle("Sorry!")
+                    .setMessage("Cart is empty...")
+                    .setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent = new Intent(FinalCart.this,Selection.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+                        }
+                    })
+                    .show();
+        }else {
+            new AlertDialog.Builder(FinalCart.this)
+                    .setTitle("Thank You!")
+                    .setMessage("Your order placed successfully!!!")
+                    .setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent = new Intent(FinalCart.this, Selection.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+                        }
+                    })
+                    .show();
+        }
     }
 
     @Override
@@ -58,6 +73,11 @@ public class FinalCart extends AppCompatActivity {
             Cursor cursor = db.rawQuery("SELECT SUM(" + DatabaseHelper.COLUMN23 + ") FROM " + DatabaseHelper.TABLE_NAME2, null);
             if (cursor.moveToFirst()) {
                 Log.e("Net Total", cursor.getInt(0) + "");
+                if(cursor.getInt(0) == 0){
+                    empty=true;
+                }else{
+                    empty=false;
+                }
                 String total = "Rs. " + cursor.getInt(0);
                 totalTextView.setText(total);
             }

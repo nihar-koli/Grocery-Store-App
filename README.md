@@ -13,6 +13,6 @@ Features:-
 
 -> It uses Sqlite Database:-
     1. User table to store registered users.
-    2. Cart table to store items purchased buy that user in that session. 
+    2. Cart table to store items purchased by that user in that session. 
 -> It uses shared spaces i.e. local database to store the user session.
 -> This is a basic app where it just adds selected item to the cart and displays the total bill.

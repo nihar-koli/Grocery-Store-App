@@ -48,6 +48,7 @@ public class FinalCart extends AppCompatActivity {
                             startActivity(intent);
                         }
                     })
+                    .setCancelable(false)
                     .show();
         }
     }
